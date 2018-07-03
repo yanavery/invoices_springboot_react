@@ -1,0 +1,92 @@
+/*
+=================================================================================================
+ SpringBoot, SpringData & React Simple Invoices App - Copyright (C) 2018, Yan Avery
+=================================================================================================
+*/
+
+a {
+	font-size: 0.875em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	height: 20px;
+	text-align: left;
+	background-color: #306090;
+	color: white;
+	font-variant: small-caps;
+}
+
+td {
+	height: 20px;
+	vertical-align: bottom;
+}
+
+table, th, td {
+	border: 0px;
+}
+
+th, td {
+	padding: 5px;
+	text-align: left;
+	font-size: 0.875em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+h1 {
+	color: #306090;
+	font-family: Arial, Helvetica, sans-serif;
+	font-variant: small-caps;
+	font-size: 1.875em;
+}
+
+form {
+	margin-bottom: 10px;
+}
+
+input {
+	margin: 5px;
+	font-size: 0.875em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=button] {
+	background-color: #306090;
+	border: none;
+	border-radius: 25px 15px;
+	cursor: pointer;
+	width: 125px;
+	height: 30px;
+	padding: 5px;
+	color: white;
+	text-decoration: none;
+	font-variant: small-caps;
+}
+
+input[type=button]:disabled {
+	background-color: #f2f2f2;
+	cursor: not-allowed;
+}
+
+label {
+	margin: 5px;
+	font-size: 0.875em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.data-editor-field input,
+.data-editor-field label {
+    display:block;
+}
+
+.data-editor-button {
+	margin-top: 30px;
+}

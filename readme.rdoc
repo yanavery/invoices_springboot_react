@@ -1,0 +1,87 @@
+== Purpose
+
+The purpose of this application is to demonstrate a simple and minimalist `Invoices` application using a simple REST API. The application is built using Java 8, SpringBoot, SpringData, an H2 in-memory database and a supporting Javascript React front-end web application.
+
+The application allows listing of invoices as well as adding of new invoices.
+
+
+== Code Location
+
+Most of the code can be found at the following location:
+
+Backend (Java)  ->  `./src/main/java/...`
+Frontend (React)  ->  `./src/resources/react/...`
+
+
+== Dependencies
+
+This demo requires the following to be installed on the computer runnning the application:
+
+- Java 8
+- Gradle
+- Node.js (uses the following packages and their dependencies):
+	npm install babel-cli
+	npm install babel-preset-es2015
+	npm install babel-preset-react
+	npm install browserify
+	npm install react
+	npm install react-dom
+	npm install react-router-dom
+	npm install superagent
+	npm install numeral
+
+
+== General Disclaimer
+
+The general idea behind the application implementation was to keep things simple. This way, more
+focus and emphasis is made on the actual problem at hand, which is the implementation of a REST invoices API using Java 8.
+
+Notable examples where there could be improvements:
+
+* Front-end code doesn't rely on modern toolchain available today (to keep build process simple).
+* Data exchanges are done over a non secure `http` connection instead of `https`.
+* No unique constraints on columns that should most likely have them (eg: invoice_number).
+* There is no application login nor any authorization rules around API accesses.
+* There is very little validation and error handling.
+* There is no internationalization.
+* The application U/I doesn't qualify as production grade, by far. Lacks some slickness!
+* Uses an in-memory database (H2) and has no caching enabled.
+* There are no unit tests.
+* And the list goes on ... :-)
+
+
+== Data
+
+Everytime the application is stopped and re-started the data added thru the application U/I is lost as it's not persisted to disk. Upon re-starting the application, the in-memory database is seeded with few sample invoice records, so the application is demo-able out of the gate.
+
+
+== Build & Launch
+
+The application is built and executed using [Gradle](http://www.gradle.org/).
+
+I ran into some strange issues when trying to integrate Babel/Browserify with Gradle. So in order to avoid anyone trying this demo similar issues, I purposely packaged my generated 'invoices-spa.js' in the src/main/static folder. Of course, in real life, this file should be generated JiT from the source JSX files on every build.
+
+Build and launch the application with the following command, from the main folder:
+
+`./gradlew bootRun`
+
+Once the application is built and launched ...
+
+1- The application becomes accessible at:
+
+	`http://localhost:8080/`
+
+2- If needed, the H2 database console becomes accessible at:
+
+	`http://localhost:8080/h2-console/`
+
+	* db url: jdbc:h2:mem:invoices
+	* username: zola
+	* password: <none>
+
+
+== Closing Words
+
+That's it ... That should be everything that's needed to make this "simple" application work. If you have any questions, comments or feedback, please feel free to contact me at yanavery (at) gmail (dot) com.
+
+Thank you!

@@ -1,0 +1,81 @@
+//=================================================================================================
+// SpringBoot, SpringData & React Simple Invoices App - Copyright (C) 2018, Yan Avery
+//=================================================================================================
+
+//----------------------------------------------
+// Node.js Dependencies:
+// =====================
+//
+// npm install babel-cli
+// npm install babel-preset-es2015
+// npm install babel-preset-react
+// npm install browserify
+// npm install react
+// npm install react-dom
+// npm install react-router-dom
+// npm install superagent
+// npm install numeral
+//----------------------------------------------
+
+buildscript {
+	ext {
+		springBootVersion = '2.0.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.h2database:h2:1.4.197")
+	}
+}
+
+plugins {
+	// id 'com.github.bryncooke.babel-gradle' version '1.0.1'
+	id 'com.timgroup.webpack' version '1.0.37'
+}
+
+// compiles '.jsx' files into '.js' files
+// babel {
+// 	presets 'react', 'es2015'
+// 	inputDir project.file('src/main/resources/react')
+// 	outputDir project.file('build/tmp/babel-out')
+// }
+
+// combines all '.js' files so they can run client-side, from a web browser
+task browserify(type:Exec) {
+	workingDir "${projectDir}"
+	commandLine "./node_modules/.bin/browserify",
+		"./build/tmp/babel-out/index.js",
+		"-o", "./build/resources/main/static/invoices-spa.js"
+}
+
+// runs babel + browserify tasks
+task js {
+    dependsOn 'babel'
+    dependsOn 'browserify'
+    tasks.findByName('browserify').mustRunAfter 'babel'
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.yan.avery'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.modelmapper:modelmapper:2.0.0')
+	compile('org.apache.commons:commons-lang3:3.7')
+	compile('org.flywaydb:flyway-core:5.1.3')
+	compile('org.projectlombok:lombok')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	runtime('com.h2database:h2')
+}
