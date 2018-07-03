@@ -19,16 +19,7 @@ This demo requires the following to be installed on the computer runnning the ap
 
 - Java 8
 - Gradle
-- Node.js (uses the following packages and their dependencies):
-* npm install babel-cli
-* npm install babel-preset-es2015
-* npm install babel-preset-react
-* npm install browserify
-* npm install react
-* npm install react-dom
-* npm install react-router-dom
-* npm install superagent
-* npm install numeral
+- Node.js and NPM
 
 
 == General Disclaimer
