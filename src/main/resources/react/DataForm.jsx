@@ -17,8 +17,8 @@ import numeral from 'numeral';
 
     - apiEndPoint: 
 
-        Data provider URL for the GET API end-point used to retrieve data for
-        populating this grid's content.
+        Data provider URL for the POST API end-point used to save data from
+        this form's content.
 
     - schema:
 
