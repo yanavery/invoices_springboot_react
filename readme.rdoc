@@ -9,8 +9,8 @@ The application allows listing of invoices as well as adding of new invoices.
 
 Most of the code can be found at the following location:
 
-Backend (Java)  ->  `./src/main/java/...`
-Frontend (React)  ->  `./src/resources/react/...`
+* Backend (Java)  ->  `./src/main/java/...`
+* Frontend (React)  ->  `./src/resources/react/...`
 
 
 == Dependencies
@@ -20,15 +20,15 @@ This demo requires the following to be installed on the computer runnning the ap
 - Java 8
 - Gradle
 - Node.js (uses the following packages and their dependencies):
-	npm install babel-cli
-	npm install babel-preset-es2015
-	npm install babel-preset-react
-	npm install browserify
-	npm install react
-	npm install react-dom
-	npm install react-router-dom
-	npm install superagent
-	npm install numeral
+* npm install babel-cli
+* npm install babel-preset-es2015
+* npm install babel-preset-react
+* npm install browserify
+* npm install react
+* npm install react-dom
+* npm install react-router-dom
+* npm install superagent
+* npm install numeral
 
 
 == General Disclaimer
@@ -75,9 +75,9 @@ Once the application is built and launched ...
 
 	`http://localhost:8080/h2-console/`
 
-	* db url: jdbc:h2:mem:invoices
-	* username: zola
-	* password: <none>
+* db url: jdbc:h2:mem:invoices
+* username: zola
+* password: <none>
 
 
 == Closing Words
